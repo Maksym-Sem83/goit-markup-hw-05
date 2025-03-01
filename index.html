@@ -489,16 +489,90 @@
     </footer>
 
     <!-- #region blackdrop -->
-<div class="backdrop">
-  <div class="modal">
-    <button type="button">
-      <svg class="close-btn">
-        <use href="./images/icons.svg"></use>
-      </svg>
-    </button>
-  </div>
-</div>
-    <!-- #endregion blackdrop -->
+    <div class="backdrop is-open">
+      <div class="modal">
+        <button class="close-btn" type="button">
+          <svg class="close-btn-icon" width="8" height="8">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <p class="modal-text">Leave your contacts and we will call you back</p>
+        <form class="model-form">
+          <div class="modal-container-block">
+            <label class="modal-form-label" for="user-text">Name</label>
+            <div class="modal-form-input-container">
+              <input
+                class="modal-form-input"
+                id="user-text"
+                name="user-text"
+                type="text"
+                pattern="[a-zA-Zа-яА-ЯіІїЇєЄ']{20}"
+                required
+              />
+              <svg class="modal-form-icon" width="12" height="12">
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
+            </div>
+          </div>
 
+          <div class="modal-container-block">
+            <label class="modal-form-label" for="user-phone">Phone</label>
+            <div class="modal-form-input-container">
+              <input
+                class="modal-form-input"
+                id="user-phone"
+                name="user-phone"
+                type="tel"
+                required
+              />
+              <svg class="modal-form-icon" width="13" height="13">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="modal-container-block">
+            <label class="modal-form-label" for="user-email">Email</label>
+            <div class="modal-form-input-container">
+              <input
+                class="modal-form-input"
+                id="user-email"
+                name="user-email"
+                type="email"
+                required
+              />
+              <svg class="modal-form-icon" width="15" height="12">
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="cont-user-textarea">
+            <label class="modal-form-label" for="user-comment">Comment</label>
+            <textarea
+              class="user-comment"
+              name="user-comment"
+              placeholder="Text input"
+              id="user-comment"
+            ></textarea>
+          </div>
+          <div class="modal-form-cont-chekbox">
+            <input
+              class="checkbox visually-hidden"
+              type="checkbox"
+              id="user-checkbox"
+            />
+            <label class="label-checkbox" for="user-checkbox"
+              ><span class="custom-checkbox"
+                ><svg class="" width="10" height="8">
+                  <use href="./images/icons.svg#icon-cheked"></use></svg></span
+              >I accept the terms and conditions of
+              <a class="checkbox-link" href="">Privacy Policy</a>
+            </label>
+          </div>
+          <button class="form-btn" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+    <!-- #endregion blackdrop -->
   </body>
 </html>
