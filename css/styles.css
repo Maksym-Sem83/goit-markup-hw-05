@@ -548,8 +548,8 @@ margin-bottom: 16px;
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: visibility, opacity, pointer-events;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
@@ -569,6 +569,7 @@ margin-bottom: 16px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn {
@@ -576,6 +577,8 @@ margin-bottom: 16px;
     right: 24px;
     top: 24px;
     padding: 8px;
+    width: 24px;
+    height: 24px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     line-height: 0;
@@ -599,7 +602,7 @@ margin-bottom: 16px;
         letter-spacing: 0.02em;
         text-align: center;
         color: #2e2f42;
-        margin-bottom: 42px;
+        margin-bottom: 16px;
 }
 
 .modal-container-block {
@@ -627,7 +630,8 @@ margin-bottom: 16px;
     border-radius: 4px;
     padding-left: 38px;
     outline: transparent;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-input:focus {
@@ -637,9 +641,10 @@ margin-bottom: 16px;
 .modal-form-icon {
     position: absolute;
     top: 50%;
-    left: 19px;
+    left: 16px;
     fill: #2e2f42;
     transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-form-input:focus+.modal-form-icon {
@@ -652,8 +657,15 @@ margin-bottom: 16px;
     width: 100%;
     height: 120px;
     padding: 8px 16px 8px 16px;
+    font-weight: 400;
+        font-size: 12px;
+        line-height: 1.17;
+        letter-spacing: 0.04em;
+        color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+    outline: transparent;
     resize: none;
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .user-comment:focus {
@@ -664,7 +676,7 @@ margin-bottom: 16px;
  .user-comment::placeholder {
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.4);
  }
@@ -688,12 +700,14 @@ margin-bottom: 16px;
     background-color: transparent;
     margin-right: 8px;
     fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .checkbox:checked + .label-checkbox .custom-checkbox {
     background-color: #404bbf;
     border: 1px solid #404bbf;
     fill: #f4f4fd;
+    border: none;
 }
 
 .label-checkbox {
@@ -713,10 +727,13 @@ margin-bottom: 16px;
 }
 
 .form-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     border-radius: 4px;
-    padding: 16px 32px;
-    width: 169px;
+    padding: 0;
+    min-width: 169px;
     height: 56px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     background-color: #4d5ae5;
@@ -728,6 +745,8 @@ margin-bottom: 16px;
         color: #fff;
     display: block;
     margin: 0 auto;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-form-container {
@@ -745,10 +764,10 @@ margin-bottom: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: #fff;
+    margin-bottom: 16px;
 }
 
 .footer-form {
- margin-top: 16px;
  display: flex;
  gap: 24px;
 }
@@ -761,7 +780,11 @@ margin-bottom: 16px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     background-color: transparent;
     padding-left: 16px;
-    
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: #fff;
 }
 
 .footer-form-input::placeholder {
@@ -777,11 +800,10 @@ margin-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
     border: none;
     border-radius: 4px;
     padding: 8px 24px;
-    width: 165px;
+    min-width: 165px;
     height: 40px;
     background-color: #4d5ae5;
     font-weight: 500;
@@ -794,5 +816,6 @@ margin-bottom: 16px;
 }
 
 .footer-form-icon {
+    margin-left: 16px;
     fill: #fff;
 }
